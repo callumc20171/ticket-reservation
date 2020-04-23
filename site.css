@@ -1,0 +1,147 @@
+body {
+	background-color: #1A1A1D;
+	font-family: "Roboto", sans-serif;
+}
+
+h1 {
+	text-align: center;
+	color: #6F2232;
+	margin: 0px;
+}
+
+label {
+	padding: 18px;
+}
+
+button, input[type=submit], input[type=button] {
+	padding: 18px;
+	text-align: center;
+	color: #6F2232;
+	background-color: #1A1A1D;
+	border-radius: 5px;
+	border: 2px #6F2232 solid;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 12px;
+	display: block;
+	cursor: pointer;
+	font-size: 18px;
+	transition: 0.2s ease 0.1s;
+}
+
+button:hover, input[type=submit]:hover, input[type=button]:hover {
+	background-color: #4E4E50;
+}
+
+input[type=text] {
+
+	color: #6F2232;
+	background-color: #1A1A1D;
+	font-size: 24px;
+	border: 2px #6F2232 solid;
+	border-radius: 5px;
+	padding: 12px;
+}
+
+.title {
+
+}
+
+.orderInput {
+	padding: 18px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.section {
+	background-color: #4E4E50;
+	border-radius: 10px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4%;
+ 	border: 2px #6F2232 solid;
+ 	text-align: center;
+}
+
+.title {
+	padding: 18px;
+	text-align: center;
+	color: #6F2232;
+	background-color: #1A1A1D;
+	border-radius: 5px;
+	border: 2px #6F2232 solid;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.accordion {
+	background-color: #1A1A1D;
+	color: #6F2232;
+	cursor: pointer;
+	padding: 18px;
+	width: 40%;
+	text-align: center;
+	font-size: 24px;
+	border: none;
+	outline: none;  
+	transition: max-height 0.2s ease-out;
+	display: block;
+	margin: auto;
+	margin-bottom: 12px;
+	margin-top: 12px;
+	border-radius: 5px;
+	border: 2px #6F2232 solid;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+	background-color: #1A1A1D;
+	color: #6F2232;
+	cursor: pointer;
+	padding: 18px;
+	width: 40%;
+	text-align: center;
+	font-size: 24px;
+	outline: none;  
+	transition: max-height 0.2s ease-out;
+	display: none;
+	margin: auto;
+	margin-bottom: 12px;
+	border-radius: 5px;
+	border: 2px #6F2232 solid;
+	
+}
+
+#Header {
+	background-color: #4E4E50;
+	width: 50%;
+	height: 5%;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	border: 2px #6F2232 solid;
+ 	left: 25%;
+ 	top: 0%;
+}
+
+#OutputError {
+	color: #C3073F;
+	display: none;
+}
+
+#PersonalForm {
+	color: #6F2232;
+}
+
+#PersonalForm label {
+	display: block;
+	padding: 12px;
+	font-size: 24px;
+}
