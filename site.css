@@ -11,6 +11,8 @@ h1 {
 
 label {
 	padding: 18px;
+	color: #1A1A1D;
+	font-size: 24px;
 }
 
 button, input[type=submit], input[type=button] {
@@ -34,7 +36,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover {
 	background-color: #4E4E50;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
 
 	color: #6F2232;
 	background-color: #1A1A1D;
@@ -42,6 +44,7 @@ input[type=text] {
 	border: 2px #6F2232 solid;
 	border-radius: 5px;
 	padding: 12px;
+	margin: 8px;
 }
 
 .title {
@@ -63,6 +66,7 @@ input[type=text] {
 	margin-top: 4%;
  	border: 2px #6F2232 solid;
  	text-align: center;
+ 	padding: 12px;
 }
 
 .title {
@@ -118,6 +122,30 @@ input[type=text] {
 	
 }
 
+.tab {
+  display: none;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #C3073F;
+}
+
 #Header {
 	background-color: #4E4E50;
 	width: 50%;
@@ -132,8 +160,9 @@ input[type=text] {
 }
 
 #OutputError {
-	color: #C3073F;
+	color: #6F2232;
 	display: none;
+	font-size: 36px;
 }
 
 #PersonalForm {
@@ -144,4 +173,11 @@ input[type=text] {
 	display: block;
 	padding: 12px;
 	font-size: 24px;
+}
+
+#RegForm {
+  margin: 80px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
 }

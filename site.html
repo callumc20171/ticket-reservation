@@ -5,6 +5,55 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
+	<div id="Header">
+		<h1>Booking reservation</h1>
+	</div>
+
+	<div id="OutputError" class="section"></div>
+	<div class="section" id="RegForm">
+	  <!-- One "tab" for each step in the form: -->
+	  <div class="tab">
+	  	<h2 class="title">Venue</h2>
+	  	<label>Please select your concert</label>
+	  		<select id="Venues" multiple>
+	  		</select>
+	  </div>
+	  <div class="tab">
+	  	<h2 class="title">Seats</h2>
+	  		<label>Number of ticket</label>
+	  		<select id="NumTicket" multiple>
+	  		</select>
+	  		<div id="SeatType">
+
+	  		</div>
+	  </div>
+	  <div class="tab">
+	  	<h2 class="title">Summary</h2>
+	  	<label id="Quantity">Quantity: </label><br>
+	  	<label id="PPT">Price per ticket: </label><br><br>
+	  	<label>Booking fee: $10</label><br>
+	  	<label id="TotalCost">Total cost: </label>
+	  </div>
+	  <div class="tab">
+	  	<h2 class="title">Your details</h2>
+	  	<label id="Name">Your name: <input type="text" id="name" placeholder="Your name" pattern="[a-zA-Z]\w{1,26}"></label><br>
+	  	<label id="EmailAddress">Email Address: <input type="email" id="email" placeholder="YourEmail@email.com"></label><br>
+	  	<label id="Cellphone">Cellphone: <input type="text" id="cellphone" placeholder="Your cellphone number" pattern="02[0-9]\d{6,8}"></label>
+	  </div>
+	  <div style="overflow:auto;">
+	    <div style="float:right;">
+	      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+	      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+	    </div>
+	  </div>
+	  <!-- Circles which indicates the steps of the form: -->
+	  <div style="text-align:center;margin-top:40px;">
+	    <span class="step"></span>
+	    <span class="step"></span>
+	    <span class="step"></span>
+	    <span class="step"></span>
+	  </div>
+	</div>
 	
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
