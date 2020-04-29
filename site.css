@@ -36,7 +36,12 @@ button:hover, input[type=submit]:hover, input[type=button]:hover {
 	background-color: #4E4E50;
 }
 
-input[type=text], input[type=email] {
+button[selected|="true"] {
+	background-color: #4E4E50;
+	transition: 0.2s ease 0.1s;
+}
+
+input[type=text], input[type=email], input[type=number] {
 
 	color: #6F2232;
 	background-color: #1A1A1D;
@@ -45,6 +50,17 @@ input[type=text], input[type=email] {
 	border-radius: 5px;
 	padding: 12px;
 	margin: 8px;
+}
+
+input:invalid {
+	background-color: #C3073F;
+}
+
+select {
+	font-size: 24px;
+	background-color: #1A1A1D;
+	color: #6F2232;
+	padding: 6px;
 }
 
 .title {
@@ -122,6 +138,11 @@ input[type=text], input[type=email] {
 	
 }
 
+.seatType {
+	display: inline-block;
+	margin: 5px;
+}
+
 .tab {
   display: none;
 }
@@ -180,4 +201,8 @@ input[type=text], input[type=email] {
   padding: 40px;
   width: 70%;
   min-width: 300px;
+}
+
+#Finished {
+	display: none;
 }

@@ -15,16 +15,19 @@
 	  <div class="tab">
 	  	<h2 class="title">Venue</h2>
 	  	<label>Please select your concert</label>
-	  		<select id="Venues" multiple>
+	  		<select id="Venues">
 	  		</select>
 	  </div>
 	  <div class="tab">
 	  	<h2 class="title">Seats</h2>
 	  		<label>Number of ticket</label>
-	  		<select id="NumTicket" multiple>
-	  		</select>
+	  		<input type="number" id="TicketQuantity" data-number="5" class="contactInfo" data-error="Sorry you can only have a maximum of 5 tickets" min="1" max="5" step="1" value="1">
 	  		<div id="SeatType">
-
+				<button class="seatType" onclick="selectButton(this);" data-price="69" value="Seated">Seated $69</button>
+				<button class="seatType" onclick="selectButton(this);" data-price="23" value="Left Stand">Left Stand $23</button>
+				<button class="seatType" onclick="selectButton(this);" data-price="56" value="Front Row">Front Row $56</button>
+				<button class="seatType" onclick="selectButton(this);" data-price="140" value="UpFront">Upfront $140</button>
+				<button class="seatType" onclick="selectButton(this);" data-price="230" value="Premier Seated">Premier Seated $230</button>
 	  		</div>
 	  </div>
 	  <div class="tab">
@@ -36,9 +39,9 @@
 	  </div>
 	  <div class="tab">
 	  	<h2 class="title">Your details</h2>
-	  	<label id="Name">Your name: <input type="text" id="name" placeholder="Your name" pattern="[a-zA-Z]\w{1,26}"></label><br>
-	  	<label id="EmailAddress">Email Address: <input type="email" id="email" placeholder="YourEmail@email.com"></label><br>
-	  	<label id="Cellphone">Cellphone: <input type="text" id="cellphone" placeholder="Your cellphone number" pattern="02[0-9]\d{6,8}"></label>
+	  	<label id="Name">Your name: <input type="text" id="NameInput" placeholder="Your name" pattern="[a-zA-Z]\w{1,26}"></label><br>
+	  	<label id="EmailAddress">Email Address: <input type="email" id="EmailInput" placeholder="YourEmail@email.com"></label><br>
+	  	<label id="Cellphone">Cellphone: <input type="text" id="CellphoneInput" placeholder="Your cellphone number" pattern="02[0-9]\d{6,8}"></label>
 	  </div>
 	  <div style="overflow:auto;">
 	    <div style="float:right;">
@@ -53,6 +56,9 @@
 	    <span class="step"></span>
 	    <span class="step"></span>
 	  </div>
+	</div>
+	<div class="section" id="Finished">
+		<h1>Thank you! Your order has been submitted</h1>
 	</div>
 	
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -72,5 +78,7 @@
 	  // Initialize Firebase
 	  firebase.initializeApp(firebaseConfig);
 	</script>
-	<script src="./site.js"></script>
+	<script src="./site.js">
+	
+	</script>
 </body>

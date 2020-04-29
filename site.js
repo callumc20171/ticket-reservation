@@ -36,11 +36,13 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    RegForm.style.display = "none";
-    validateForm();
-    return false;
+
+    
+
+    return submitForm();
   }
   // Otherwise, display the correct tab:
+  updateSummary();
   showTab(currentTab);
 }
 
@@ -59,6 +61,12 @@ function validateForm() {
       valid = false;
     }
   }
+
+  if (Venues.value == "Select your choice: ") { //Check their concert
+  	valid = false;  	
+  }
+
+  
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
@@ -82,6 +90,63 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function addSelectItems() {
-	//Add select items
+function addOptions(selectEle, list) {
+	let selectChild = document.createElement("option");
+	selectChild.selected = true;
+	selectChild.value = "Select your choice: ";
+	selectChild.disabled = true;
+	selectChild.innerHTML = "Select your choice: ";
+	selectEle.appendChild(selectChild);
+	for (let val of list) {
+		var opt = document.createElement("option");
+		opt.value = val;
+		opt.innerHTML = val;
+		selectEle.appendChild(opt);
+	}
+	return selectEle;
 }
+
+function selectButton(button) {
+	var seatButtons = document.getElementsByClassName("seatType");
+	for (let seatButton of seatButtons) {
+		if (seatButton.getAttribute("selected") == "true") {
+			seatButton.removeAttribute("selected");
+		}
+	}
+	button.setAttribute("selected", "true");
+
+}
+
+function updateSummary() {
+	Quantity.innerHTML = "Quantity: " + TicketQuantity.value;
+	let ppt = document.querySelector('[selected|="true"]');
+	if (!ppt) {
+		return;
+	}
+	PPT.innerHTML = "Price per ticket: " + ppt.dataset.price;
+	let cost = Number(TicketQuantity.value) * Number(ppt.dataset.price) + 10;
+	TotalCost.innerHTML = "Total cost: " + cost;
+	return cost;
+}
+
+function submitForm() {
+	var data = {}
+	data["Ticket Quantity"] = TicketQuantity.value;
+	data[document.querySelector('[selected|="true"]').value] = document.querySelector('[selected|="true"]').dataset.price;
+	data["cost"] = updateSummary();
+	data["venue"] = Venues.value;
+	data[NameInput.value] = EmailInput.value;
+	data["cellphone"] = CellphoneInput.value;
+	console.log(data);
+
+	database.ref("tickets/" + NameInput.value).set(data);
+	RegForm.style.display = "none"
+	Finished.style.display = "block";
+	return true;
+}
+
+addOptions(document.getElementById("Venues"), [
+	"Teletubbies, 24th October 2020",
+		"The wiggles, 9th December 2020",
+		"Minecraft sing a long, 1 January 2021",
+		"Despacito 2, 2nd May 2021"]);
