@@ -63,10 +63,6 @@ select {
 	padding: 6px;
 }
 
-.title {
-
-}
-
 .orderInput {
 	padding: 18px;
 	margin-top: 12px;
@@ -184,6 +180,9 @@ select {
 	color: #6F2232;
 	display: none;
 	font-size: 36px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 7%;
 }
 
 #PersonalForm {
@@ -205,4 +204,44 @@ select {
 
 #Finished {
 	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+	#Header {
+		height: fit-content;
+	}
+
+	#RegForm {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#OutputError {
+		margin-top: 12%;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+	body {
+		font-size: 14px;
+	}
+
+	#RegForm {
+		width: 80%;
+	}
+
+	input, select {
+		width: 60%;
+		font-size: 14px;
+		margin: 10px;
+	}
+
+	#OutputError {
+		margin-top:  20%;
+	}
+
+
 }
